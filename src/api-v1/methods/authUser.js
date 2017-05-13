@@ -1,8 +1,8 @@
 const passport = require('passport');
 const { Strategy } = require('passport-local');
 
-passport.use(new Strategy((username, password, done) {
-  User.findOne({ username }, (err, user) {
+passport.use(new Strategy((username, password, done) => {
+  User.findOne({ username }, (err, user) => {
     if (err) { return done(err); }
     if (!user) {
       return done(null, false, { message: 'Incorrect username.' });
@@ -16,7 +16,5 @@ passport.use(new Strategy((username, password, done) {
 
 
 module.exports = function authenticateUser(req, res) {
-
-
 
 }
